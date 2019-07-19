@@ -1,0 +1,10 @@
+1. Contract Address : 0xe50449A033b075ABf396D9fce2A480D0e01f75D1
+2. Transaction ID : 0xa517c0e7b2d0f80ebd8e32d44e92349bcc63164aaf25aebaa672398c45370905
+3. Contract Owner Address : 0xe50449A033b075ABf396D9fce2A480D0e01f75D1
+4. Used library : Roles.sol
+    - By using roles.sol lirbrary, I can implement actors in the diagram.
+5. IPFS is not used.
+6. Program version : 0.0.0
+7. Node version : v10.15.3
+8. Truffle version : v5.0.26
+9. web3 version : 1.0.0-beta.37
