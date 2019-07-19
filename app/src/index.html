@@ -1,37 +1,197 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>MetaCoin | Truffle Webpack Demo w/ Frontend</title>
-  </head>
-  <style>
-    input {
-      display: block;
-      margin-bottom: 12px;
-    }
-  </style>
-  <body>
-    <h1>MetaCoin — Example Truffle Dapp</h1>
-    <p>You have <strong class="balance">loading...</strong> META</p>
+<html lang="en">
 
-    <h1>Send MetaCoin</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fair Trade Milk Products</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
 
-    <label for="amount">Amount:</label>
-    <input type="text" id="amount" placeholder="e.g. 95" />
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Fair Trade Milk Products</h1>
+        <hr>
+        <p style="text-align: center;">Prove the authenticity of milk product using the Ethereum blockchain.</p>
+    </div>
 
-    <label for="receiver">To address:</label>
-    <input
-      type="text"
-      id="receiver"
-      placeholder="e.g. 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"
-    />
+    <div id="ftc-harvest">
+        <h2>Product Overview</h2>
+        <div class="form-group">
+            UPC
+            <br>
+            <input type="number" id="upcSearch" name="upc" value=1><br>
+            <div class=button-div>
+                <button class="btn-fetch" id="fetchItemButton" onclick="App.fetchItemButton()">Fetch Product</button>
+            </div>
+            <br>
+            SKU
+            <br>
+            <input type="text" id="itemSku" name="itemSku" size="50"><br>
+            itemType
+            <br>
+            <input type="text" id="itemType" name="itemType" size="50"><br>
+            ownerId
+            <br>
+            <input type="text" id="ownerId" name="ownerId" size="50"><br>
+            productorId
+            <br>
+            <input type="text" id="productorId" name="productorId" size="50"><br>
+            productorName
+            <br>
+            <input type="text" id="productorName" name="productorName" size="50"><br>
+            productorInfo
+            <br>
+            <input type="text" id="productorInfo" name="productorInfo" size="50"><br>
+            productId
+            <br>
+            <input type="text" id="productId" name="productId" size="50"><br>
+            productNotes
+            <br>
+            <input type="text" id="productNotes" name="productNotes" size="50"><br>
+            productPrice
+            <br>
+            <input type="text" id="productPrice" name="productPrice" size="50"><br>
+            itemState
+            <br>
+            <input type="text" id="itemState" name="itemState" size="50"><br>
+            distributorId
+            <br>
+            <input type="text" id="distributorId" name="distributorId" size="50"><br>
+            retailerId
+            <br>
+            <input type="text" id="retailerId" name="retailerId" size="50"><br>
+            consumerId
+            <br>
+            <input type="text" id="consumerId" name="consumerId" size="50"><br>
+            usedMilkUpc
+            <br>
+            <input type="text" id="usedMilkUpc" name="usedMilkUpc" size="50"><br>
+        </div>
+        <div class=form-break></div><hr>
+        <h2>Rancher Details</h2>
+        <div class="form-group">
+            Rancher ID
+            <br>
+            <input type="text" id="rancherId" name="rancherId" value="0xe50449A033b075ABf396D9fce2A480D0e01f75D1"
+                size="50"><br>
+            Rancher Name
+            <br>
+            <input type="text" id="rancherName" name="rancherName" value="John Doe"><br>
+            Rancher Information
+            <br>
+            <input type="text" id="rancherInfo" name="rancherInfo" value="Happy cows"><br>
+            Milk upc
+            <br>
+            <input type="number" id="upc" name="upc" value=1><br>
+            Product Notes
+            <br>
+            <input type="text" id="productNotesMilk" name="productNotesMilk" value="fresh milk"><br>
+            Product Price
+            <br>
+            <input type="number" id="productPriceMilk" name="productPriceMilk" value=1000>wei<br>
+            <br>
+            <button class="btn-product" id="productMilkButton" onclick="App.productMilkButton()">Product</button>
+            <button class="btn-process" id="processItemButton" onclick="App.processItemButton()">Process</button>
+            <button class="btn-forsale" id="sellItemButton" onclick="App.sellItemButton()">ForSale</button>
+        </div>
+        <div class=form-break></div><hr>
+        <h2>CheeseFactory Details</h2>
+        <div class="form-group">
+            CheeseFactory ID
+            <br>
+            <input type="text" id="cheeseFactoryId" name="cheeseFactoryId" value="0xe50449A033b075ABf396D9fce2A480D0e01f75D1"
+                size="50"><br>
+            CheeseFactory Name
+            <br>
+            <input type="text" id="cheeseFactoryName" name="cheeseFactoryName" value="Mozart"><br>
+            CheeseFactory Information
+            <br>
+            <input type="text" id="cheeseFactoryInfo" name="cheeseFactoryInfo" value="Vienna Cheese Factory"><br>
+            milk upc for cheese
+            <br>
+            <input type="number" id="milkUpcCheese" name="milkUpcCheese" value=1><br>
+            Product Notes
+            <br>
+            <input type="text" id="productNotesCheese" name="productNotesCheese" value="fresh cheese"><br>
+            Product Price
+            <br>
+            <input type="number" id="productPriceCheese" name="productPriceCheese" value=1500><br>
+            Cheese upc
+            <br>
+            <input type="number" id="cheeseUpc" name="cheeseUpc" value=100>wei<br>
+            <br>
+            <button class="btn-buy" id="buyMilkButton" onclick="App.buyMilkButton()">Buy milk</button>
+            <button class="btn-product" id="productCheeseButton" onclick="App.productCheeseButton()">Product</button>
+            <button class="btn-forsale" id="sellItemButtonCheese" onclick="App.sellItemButtonCheese()">ForSale</button>
+        </div>
+        <div class=form-break></div><hr>
+        <h2>Distributor Details</h2>
+        <div class="form-group">
+            Distributor ID
+            <br>
+            <input type="text" id="distributorIdB" name="distributorIdB" value="0xe50449A033b075ABf396D9fce2A480D0e01f75D1"
+                size="50"><br>
+            product UPC
+            <br>
+            <input type="number" id="upcDistributor" name="upcDistributor" value=100><br>
+            Product Price
+            <br>
+            <input type="number" id="productPriceDistributor" name="productPriceDistributor" value=1500><br>
+            <br>
+            <button class="btn-buy" id="buyItemDistributorButton" onclick="App.buyItemDistributorButton()">Buy</button>
+            <button class="btn-product" id="sellItemDistributorButton" onclick="App.sellItemDistributorButton()">ForSale</button>
+            <button class="btn-forsale" id="shipItemButton" onclick="App.shipItemButton()">Ship</button>
+        </div>
+        <div class=form-break></div><hr>
+        <h2>Retailer Details</h2>
+        <div class="form-group">
+            Retailer ID
+            <br>
+            <input type="text" id="retailerIdB" name="retailerIdB" value="0xe50449A033b075ABf396D9fce2A480D0e01f75D1"
+                size="50"><br>
+            product UPC
+            <br>
+            <input type="number" id="upcRetailer" name="upcRetailer" value=100><br>
+            Product Price
+            <br>
+            <input type="number" id="productPriceRetailer" name="productPriceRetailer" value=1500><br>
+            <br>
+            <button class="btn-receive" id="receiveItemButton" onclick="App.receiveItemButton()">Receive</button>
+            <button class="btn-buy" id="buyItemRetailerButton" onclick="App.buyItemRetailerButton()">Buy</button>
+            <button class="btn-forsale" id="sellItemRetailerButton" onclick="App.sellItemRetailerButton()">ForSale</button>
+        </div>
+        <div class=form-break></div><hr>
+        <h2>Consumer Details</h2>
+        <div class="form-group">
+            Consumer ID
+            <br>
+            <input type="text" id="consumerIdB" name="consumerIdB" value="0xe50449A033b075ABf396D9fce2A480D0e01f75D1"
+                size="50"><br>
+            product UPC
+            <br>
+            <input type="number" id="upcConsumer" name="upcConsumer" value=100><br>
+            <br>
+            <button class="btn-buy" id="purchaseItemButton" onclick="App.purchaseItemButton()">Buy</button>
+        </div>
+        <div class=form-break></div><hr>
+    </div>
 
-    <button onclick="App.sendCoin()">Send MetaCoin</button>
+    <!-- <h2>Transaction History<span id="ftc-history"></span></h2>
+    <div>
+        <ul id="ftc-events">
+            Events will appear here from app.js
+        </ul>
+        <br>
+        <hr>
+    </div> -->
 
-    <p id="status"></p>
-    <p>
-      <strong>Hint:</strong> open the browser developer console to view any
-      errors and warnings.
-    </p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="index.js"></script>
-  </body>
+    <!-- <script src="js/web3.min.js"></script> -->
+    <!-- <script src="js/truffle-contract.js"></script> -->
+    <!-- <script src="js/app.js"></script> -->
+</body>
+
 </html>

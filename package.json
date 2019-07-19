@@ -1,0 +1,26 @@
+{
+  "name": "milk_supply_chain",
+  "version": "1.0.0",
+  "description": "Supply Chain Dapp based on Ethereum Blockchain network.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "truffle-hdwallet-provider": "^1.0.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hibeom/milk_supply_chain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hibeom/milk_supply_chain/issues"
+  },
+  "homepage": "https://github.com/hibeom/milk_supply_chain#readme"
+}
